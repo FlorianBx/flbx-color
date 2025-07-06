@@ -6,4 +6,4 @@
 set background=dark
 
 " Load the main Lua theme file.
-lua require('florian.plugins.ui.flbx')
+lua require('flbx.theme')
