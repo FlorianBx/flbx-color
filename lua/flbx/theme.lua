@@ -1,9 +1,5 @@
--- lua/florian/plugins/ui/flbx.lua
--- Defines the 'flbx' colorscheme
-
 vim.g.colors_name = "flbx"
 
--- Color palette based on your terminal theme
 local colors = {
   bg = "#212631",
   fg = "#ddeafb",
@@ -30,12 +26,10 @@ local colors = {
   p15 = "#e5eef6", -- pale nord white-blue
 }
 
--- Helper function to set highlight groups
 local function hi(group, opts)
   vim.api.nvim_set_hl(0, group, opts)
 end
 
--- Clear existing highlights before setting new ones
 vim.cmd("hi clear")
 if vim.fn.exists("syntax_on") then
   vim.cmd("syntax reset")
@@ -44,8 +38,8 @@ end
 -- Editor UI
 hi("Normal", { fg = colors.fg, bg = colors.bg })
 hi("Cursor", { fg = colors.cursor_text, bg = colors.cursor })
-hi("CursorLine", { bg = colors.p8 })
-hi("CursorLineNr", { fg = colors.p12, bg = colors.p8, bold = true })
+hi("CursorLine", {})
+hi("CursorLineNr", { fg = colors.p12, bold = true })
 hi("LineNr", { fg = colors.p0, bg = colors.bg })
 hi("SignColumn", { bg = colors.bg })
 hi("Visual", { bg = colors.selection_bg, fg = colors.selection_fg })
