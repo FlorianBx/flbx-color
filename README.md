@@ -14,7 +14,7 @@ Using `lazy.nvim`:
 
 ```lua
 {
-  "FlorianBx/flbx-theme.nvim",
+  "FlorianBx/flbx-colorscheme.nvim",
   lazy = false,
   priority = 1000,
   config = function()
