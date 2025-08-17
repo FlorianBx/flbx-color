@@ -1,9 +1,24 @@
-" colors/flbx.vim
-" This file acts as the entry point for the :colorscheme command.
+" Name: flbx
+" Description: A clean, elegant colorscheme inspired by the Nord theme
+" Author: Generated with Claude Code
+" License: MIT
 
-" Set the background to dark. This is important for other plugins to know
-" what kind of theme is being used.
+if version > 580
+  highlight clear
+  if exists("syntax_on")
+    syntax reset
+  endif
+endif
+
+let g:colors_name = "flbx"
 set background=dark
 
-" Load the main Lua theme file.
-lua require('flbx.theme')
+if !has('gui_running') && &t_Co != 256
+  finish
+endif
+
+lua << EOF
+local flbx = require('flbx')
+flbx.setup()
+flbx.load()
+EOF
